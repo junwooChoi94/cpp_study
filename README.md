@@ -1,3 +1,3 @@
 # cpp_study
-this repo junst studing cpp for my coding skill 
+this repo just studing cpp for my coding skill 
 i studing from hong jungmo`s lecture
