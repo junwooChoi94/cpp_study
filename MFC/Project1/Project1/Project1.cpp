@@ -6,10 +6,11 @@
 #include "Project1.h"
 #include <windows.h>
 #include "resource.h"
-
+#include <string>
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+
 
 
 // 유일한 애플리케이션 개체입니다.
@@ -17,7 +18,7 @@
 CWinApp theApp;
 
 
-LRESULT CALLBACK WndProc(HWND, UINT, WPRAM, LPARAM);
+LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -27,7 +28,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	MSG msg;
 
 	//윈도우 클래스를 초기화하고 운영체제에 등록.
-	wndclass.style = CS_HREDRAW ¦ CS_VREDRAW; //스타일 지정
+	wndclass.style = CS_HREDRAW | CS_VREDRAW; //스타일 지정
 	wndclass.lpfnWndProc = WndProc; // 윈도우 프로시저 이름
 	wndclass.cbClsExtra = 0; // 여분 메모리 0Byte
 	wndclass.cbWndExtra = 0; // 여분 메모리 0
@@ -36,7 +37,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	wndclass.hCursor = LoadCursor(NULL, IDC_ARROW); //커서 모양
 	wndclass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH); //배경(흰색)
 	wndclass.lpszMenuName = NULL; //메뉴(NULL -> 메뉴없음 )
-	wndclass.lpszClassName = TEXT('HellowClass');//윈도우 클래스 이름
+	wndclass.lpszClassName = TEXT("HellowClass");//윈도우 클래스 이름
 	if (!RegisterClass(&wndclass)) return 1;
 
 	// 윈도우를 생성하고 화면에 나타낸다.
